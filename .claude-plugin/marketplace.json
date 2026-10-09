@@ -1,0 +1,18 @@
+{
+  "name": "claude-confirm-gate",
+  "metadata": {
+    "description": "Claude Code mod: pauses risky shell commands and edits that match your patterns and asks you to proceed or cancel with buttons."
+  },
+  "owner": {
+    "name": "i-noma-ru"
+  },
+  "plugins": [
+    {
+      "name": "confirm-gate",
+      "description": "Pauses risky shell commands and edits that match your patterns and asks you to proceed or cancel with buttons.",
+      "source": "./",
+      "category": "productivity",
+      "homepage": "https://github.com/i-noma-ru/claude-confirm-gate"
+    }
+  ]
+}

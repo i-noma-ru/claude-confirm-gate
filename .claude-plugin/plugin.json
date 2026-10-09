@@ -1,0 +1,41 @@
+{
+  "name": "confirm-gate",
+  "version": "0.1.0",
+  "description": "Pauses risky shell commands and edits that match your patterns and asks you to proceed or cancel with buttons.",
+  "author": {
+    "name": "i-noma-ru",
+    "url": "https://github.com/i-noma-ru"
+  },
+  "homepage": "https://github.com/i-noma-ru/claude-confirm-gate",
+  "repository": "https://github.com/i-noma-ru/claude-confirm-gate",
+  "license": "MIT",
+  "keywords": [
+    "claude-code",
+    "mod",
+    "safety",
+    "confirm",
+    "tool-call"
+  ],
+  "userConfig": {
+    "bash_patterns": {
+      "type": "string",
+      "multiple": true,
+      "title": "Bash command patterns",
+      "description": "Case-insensitive JavaScript regular expressions tested against each Bash command. One match pauses the call.",
+      "default": [
+        "git( -C \\S+)? push[^\\n]* (--force|-f)\\b",
+        "git( -C \\S+)? reset --hard",
+        "git( -C \\S+)? clean -f",
+        "git( -C \\S+)? checkout -- ",
+        "git( -C \\S+)? restore "
+      ]
+    },
+    "path_patterns": {
+      "type": "string",
+      "multiple": true,
+      "title": "Edited path patterns",
+      "description": "Case-insensitive JavaScript regular expressions tested against the file path of Edit, Write and MultiEdit calls (backslashes normalized to slashes). Empty: paths are not checked.",
+      "default": []
+    }
+  }
+}
